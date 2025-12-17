@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import subprocess
 import sys
 import shutil
@@ -8,11 +6,11 @@ from pathlib import Path
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn, TimeElapsedColumn, DownloadColumn
 
-# ----------------- Initialization -----------------
+# Initialization 
 console = Console()
 CONFIG_FILE = Path.home() / ".mp3_downloader_config"
 
-# ----------------- Helper Functions -----------------
+# Helper Functions
 def clear_screen():
     print("\033c", end="")
 
@@ -73,7 +71,6 @@ def download_audio(url, quality, folder):
     ]
 
     console.print("\n[bold green]Starting download...[/bold green]\n")
-    # Using rich Progress to show progress dynamically
     with Progress(
         SpinnerColumn(),
         "[progress.description]{task.description}",
@@ -93,7 +90,7 @@ def download_audio(url, quality, folder):
             progress.stop()
             console.print("[bold red]✖ Download failed. Check URL, network, or yt-dlp version.[/bold red]")
 
-# ----------------- Main Program -----------------
+# Main Program
 def main():
     clear_screen()
     check_dependencies()
