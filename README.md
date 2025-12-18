@@ -86,10 +86,10 @@ Now change the `PATH` to be compatible with your files placing:
 # This wrapper script activates the virtual environment and runs the Python script
 
 # Set the path to your project's virtual environment(change the PATH based on your placing)
-VENV_PATH="/home/your_username/Projects/YTmp3/venv/bin/activate"
+VENV_PATH="/home/your_username/YTmp3/venv/bin/activate"
 
 # Set the path to your actual Python script(change the PATH based on your placing)
-SCRIPT_PATH="/home/your_username/Projects/YTmp3/ytmp3.py"
+SCRIPT_PATH="/home/your_username/YTmp3/ytmp3.py"
 
 # Check if the virtual environment exists(don't modify it)
 if [ ! -f "$VENV_PATH" ]; then
