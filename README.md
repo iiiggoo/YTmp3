@@ -32,8 +32,8 @@ This project is built on Python. You can check if you have it installed by runni
 `yt-dlp` is the engine that fetches the video from YouTube.
 
 # Use these commands in your terminal
-sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp
+```sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp```
 
 **C. ffmpeg (The Audio Converter):**
 `ffmpeg` is a powerful tool used to convert the video stream into an MP3 audio file.
@@ -61,17 +61,17 @@ cd YTmp3
 It's highly recommended to use a virtual environment to manage project dependencies. This keeps your project's libraries separate from your system's Python.
 
 # Use these commands in your terminal
-python3 -m venv venv
+```python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt```
 
 ### Step 4: (Optional) System-Wide Installation
 
 This is a highly recommended step. It allows you to run the app from any directory just by typing `ytmp3`, instead of having to find the script every time.
 
 # Use these commands in your terminal
-chmod +x ytmp3.py
-sudo mv ytmp3.py /usr/local/bin/ytmp3
+```chmod +x ytmp3.py
+sudo mv ytmp3.py /usr/local/bin/ytmp3```
 
 ---
 
