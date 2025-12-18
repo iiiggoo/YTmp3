@@ -34,7 +34,15 @@ sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o
 **Install ffmpeg:**
 - **Ubuntu/Debian:**
   ```bash
-  sudo apt update && sudo apt install ffmpeg -y
+  sudo apt install ffmpeg -y
+  ```
+  - **Fedora, CentOS, RHEL:**
+  ```bash
+  sudo dnf install ffmpeg
+  ```
+  - **Arch Linux:**
+  ```bash
+  sudo pacman -S ffmpeg
   ```
 - **macOS (via Homebrew):**
   ```bash
