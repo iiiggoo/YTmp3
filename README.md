@@ -68,7 +68,7 @@ source venv/bin/activate
 # venv\Scripts\activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### Step 4: System-wide Installation (Optional)
