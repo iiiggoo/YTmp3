@@ -94,7 +94,7 @@ python ytmp3.py
 ```
 
 > [!IMPORTANT]
-> **Note:** Currently, YTmp3 is designed for **single video URLs only**. Support for playlists is not available at this time.
+> **Note:** Currently, YTmp3 is designed for **single video URLs only**. Support for playlists is not available at this time , make sure its one video **URL** not a palylist **URL**.
 
 ---
 
