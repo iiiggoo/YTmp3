@@ -1,136 +1,121 @@
 # 🎵 YTmp3 - YouTube MP3 Downloader
 
-[![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://python.org)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A beautiful and feature-rich command-line YouTube to MP3 downloader built with Python. This tool provides an enhanced terminal UI, allowing you to preview video details before downloading and track progress with a clean, informative progress bar. It also automatically adds cover art and metadata to your downloaded tracks.
+A beautiful and feature-rich command-line YouTube to MP3 downloader built with Python. This tool provides an enhanced terminal UI, allowing you to preview video details before downloading and track progress with a clean, informative progress bar. It also automatically adds cover art and metadata to your downloaded tracks for a seamless music library experience.
+
+---
 
 ## ✨ Features
 
--   **Enhanced Terminal UI:** A clean, modern, and colorful interface built with the `rich` library.
--   **Video Preview:** Before downloading, see the video's **title, duration, and estimated file size** to confirm it's the right one.
--   **Smart Progress Bar:** A real-time progress bar shows the download status, including downloaded data, total size, and percentage. It also indicates when the file is being processed (e.g., converted to MP3).
--   **Persistent Configuration:** The application remembers your download folder, so you only need to set it up once.
--   **Flexible Audio Quality Selection:** Choose from Best, 320kbps, 192kbps (default), or 128kbps to balance quality and file size.
--   **Automatic Cover Art & Metadata Embedding:** Downloads the video thumbnail and embeds it as album art, along with song title and artist metadata.
--   **System-Wide Installation:** Install it once and run the `ytmp3` command from anywhere in your terminal.
+-   **Enhanced Terminal UI**: Leveraging the `rich` library for a modern, colorful, and clean command-line experience.
+-   **Video Preview**: See video details (title, duration, views) before you commit to the download.
+-   **Smart Progress Bar**: Track your downloads in real-time with an accurate and aesthetic progress indicator.
+-   **Persistent Configuration**: Remembers your preferences to streamline future downloads.
+-   **Flexible Audio Quality**: Choose your preferred bitrate: Best (Variable), 320kbps, 192kbps (Default), or 128kbps.
+-   **Automatic Cover Art & Metadata**: Automatically embeds thumbnails as album art and fills in ID3 tags (title, artist).
+-   **System-Wide Installation**: Easy to set up as a global command for access from any directory.
 
 ---
 
 ## 🛠️ Installation & Setup
 
-Follow these steps to get YTmp3 running on your system. These instructions are tailored for Linux/macOS users.
+Follow these steps to get **YTmp3** running on your system.
 
 ### Step 1: Prerequisites
+Ensure you have **Python 3.6+** installed. You also need `yt-dlp` and `ffmpeg` installed on your system.
 
-Before you can run YTmp3, you need to have `Python`, `yt-dlp`, and `ffmpeg` installed on your system.
+**Install yt-dlp:**
+```bash
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && sudo chmod a+rx /usr/local/bin/yt-dlp
+```
 
-**A. Python and pip:**
-This project is built on Python. You can check if you have it installed by running `python3 --version`. If not, install it from the official Python website.
-
-**B. yt-dlp (The Downloader):**
-`yt-dlp` is the engine that fetches the video from YouTube.
-
-# Use these commands in your terminal
-sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp
-
-**C. ffmpeg (The Audio Converter):**
-`ffmpeg` is a powerful tool used to convert the video stream into an MP3 audio file.
-
-# For Ubuntu/Debian-based systems
-sudo apt update && sudo apt install ffmpeg
-
-# For macOS (using Homebrew)
-brew install ffmpeg
+**Install ffmpeg:**
+- **Ubuntu/Debian:**
+  ```bash
+  sudo apt update && sudo apt install ffmpeg -y
+  ```
+- **macOS (via Homebrew):**
+  ```bash
+  brew install ffmpeg
+  ```
 
 ### Step 2: Clone the Repository
+```bash
+git clone https://github.com/username/ytmp3.git && cd ytmp3
+```
 
-This command downloads the YTmp3 project files from GitHub to your computer.
+### Step 3: Virtual Environment & Dependencies
+It is recommended to use a virtual environment to keep your global Python installation clean.
 
-# Use this command in your terminal
-git clone https://github.com/iiiggoo/YTmp3.git
+```bash
+# Create virtual environment
+python3 -m venv venv
 
-Now, navigate into the project directory:
-
-# Use this command in your terminal
-cd YTmp3
-
-### Step 3: Set Up a Virtual Environment & Install Dependencies
-
-It's highly recommended to use a virtual environment to manage project dependencies. This keeps your project's libraries separate from your system's Python.
-
-# Use these commands in your terminal
-```python3 -m venv venv
+# Activate virtual environment
+# On Linux/macOS:
 source venv/bin/activate
-pip install -r requirements.txt```
+# On Windows:
+# venv\Scripts\activate
 
-### Step 4: (Optional) System-Wide Installation
+# Install dependencies
+pip install -r requirements.txt
+```
 
-This is a highly recommended step. It allows you to run the app from any directory just by typing `ytmp3`, instead of having to find the script every time.
+### Step 4: System-wide Installation (Optional)
+If you want to run `ytmp3` from anywhere in your terminal:
 
-# Use these commands in your terminal
-```chmod +x ytmp3.py
-sudo mv ytmp3.py /usr/local/bin/ytmp3```
+```bash
+chmod +x ytmp3.py
+sudo mv ytmp3.py /usr/local/bin/ytmp3
+```
 
 ---
 
 ## 🚀 Usage
 
-Once installed, using YTmp3 is straightforward.
+Once installed, you can launch the downloader by simply typing:
 
-1.  **Run the application.**
-    If you performed the optional system-wide installation, you can run it from anywhere with:
-    
-    # Use this command in your terminal
-    ytmp3
-    
-    If you didn't, you must run it from the project directory with the virtual environment activated:
-    
-    # Use these commands in your terminal
-    cd YTmp3
-    source venv/bin/activate
-    python ytmp3.py
+```bash
+ytmp3
+```
+*Alternatively, if you didn't perform the system-wide install:*
+```bash
+python ytmp3.py
+```
 
-2.  **First-Time Setup.**
-    The very first time you run the app, it will ask you to enter the full path to your preferred download folder (e.g., `/home/user/Music/YoutubeDownloads`). This setting will be saved for future runs.
-
-3.  **Download a Song.**
-    - The app will prompt you to `Enter YouTube URL:`. Paste the link to the YouTube video you want to download.
-    - **Important:** Please ensure the URL you provide is for a **single video**, not a playlist. This tool is designed to download one video at a time.
-    - The application will display the video details (title, duration, size). Confirm if you want to proceed.
-    - You will then be asked to select the audio quality. Type your choice and press Enter.
-
-4.  **Enjoy!**
-    A colored progress bar will show the download and conversion status. Once finished, you'll find the MP3 file in your configured download folder, complete with cover art and metadata.
+> [!IMPORTANT]
+> **Note:** Currently, YTmp3 is designed for **single video URLs only**. Support for playlists is not available at this time.
 
 ---
 
 ## ⚠️ Notes & Troubleshooting
 
--   **Ensure Dependencies are in PATH:** Make sure `yt-dlp` and `ffmpeg` are installed correctly and are in your system's PATH. The installation commands above should handle this for you.
--   **Updating yt-dlp:** YouTube frequently changes its backend. If you encounter download errors, `yt-dlp` might need an update. You can update it by running:
-    
-    # Use this command in your terminal
+-   **Update yt-dlp**: YouTube frequently updates its platform, which can break downloaders. If you encounter issues, update your system's `yt-dlp` first:
+    ```bash
     yt-dlp -U
--   **Single Videos Only:** This app is designed to download individual videos. It will not work correctly with playlist URLs.
+    ```
+-   **FFmpeg Path**: Ensure `ffmpeg` is in your system's PATH. You can check this by running `ffmpeg -version` in your terminal. If the command isn't found, re-run the installation steps in Step 1.
+-   **Metadata**: Metadata extraction depends on the information provided by the YouTube uploader.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
 ## 📝 License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+*Built with ❤️ using Python and the [Rich](https://github.com/Textualize/rich) library.*
