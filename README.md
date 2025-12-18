@@ -10,7 +10,7 @@ A beautiful and feature-rich command-line YouTube to MP3 downloader built with P
 ## ✨ Features
 
 -   **Enhanced Terminal UI**: Leveraging the `rich` library for a modern, colorful, and clean command-line experience.
--   **Video Preview**: See video details (title, duration, views) before you commit to the download.
+-   **Video Preview**: See video details (title, duration, size) before you commit to the download.
 -   **Smart Progress Bar**: Track your downloads in real-time with an accurate and aesthetic progress indicator.
 -   **Persistent Configuration**: Remembers your preferences to streamline future downloads.
 -   **Flexible Audio Quality**: Choose your preferred bitrate: Best (Variable), 320kbps, 192kbps (Default), or 128kbps.
@@ -74,9 +74,48 @@ pip3 install -r requirements.txt
 ### Step 4: System-wide Installation for linux users (Optional)
 If you want to run `ytmp3` from anywhere in your terminal:
 
+## 1:
+First, navigate to your project directory and run this command : 
 ```bash
-chmod +x ytmp3.py
-sudo mv ytmp3.py /usr/local/bin/ytmp3
+nano ytmp3
+```
+Now change the `PATH` to be compatible with your files placing:
+
+```Python
+#!/bin/bash
+# This wrapper script activates the virtual environment and runs the Python script
+
+# Set the path to your project's virtual environment(change the PATH based on your placing)
+VENV_PATH="/home/your_username/Projects/YTmp3/venv/bin/activate"
+
+# Set the path to your actual Python script(change the PATH based on your placing)
+SCRIPT_PATH="/home/your_username/Projects/YTmp3/ytmp3.py"
+
+# Check if the virtual environment exists(don't modify it)
+if [ ! -f "$VENV_PATH" ]; then
+    echo "Error: Virtual environment not found at $VENV_PATH"
+    exit 1
+fi
+
+# Check if the Python script exists(don't modify it)
+if [ ! -f "$SCRIPT_PATH" ]; then
+    echo "Error: Python script not found at $SCRIPT_PATH"
+    exit 1
+fi
+
+# Activate the virtual environment and run the script(don't modify it)
+source "$VENV_PATH"
+python3 "$SCRIPT_PATH" "$@"
+```
+## 2:
+
+Move the `ytmp3` file to the bin folder in your system:
+
+```bash
+# make the file executable
+chmod +x ytmp3
+# move it to the bin folder
+sudo mv ytmp3 /usr/local/bin/ytmp3
 ```
 
 ---

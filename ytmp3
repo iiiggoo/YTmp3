@@ -1,0 +1,24 @@
+#!/bin/bash
+# This wrapper script activates the virtual environment and runs the Python script
+
+# Set the path to your project's virtual environment(change the PATH based on your placing)
+VENV_PATH="/home/yourusername/YTmp3/venv/bin/activate"
+
+# Set the path to your actual Python script
+SCRIPT_PATH="/home/yourusername/YTmp3/ytmp3.py"
+
+# Check if the virtual environment exists
+if [ ! -f "$VENV_PATH" ]; then
+    echo "Error: Virtual environment not found at $VENV_PATH"
+    exit 1
+fi
+
+# Check if the Python script exists
+if [ ! -f "$SCRIPT_PATH" ]; then
+    echo "Error: Python script not found at $SCRIPT_PATH"
+    exit 1
+fi
+
+# Activate the virtual environment and run the script
+source "$VENV_PATH"
+python3 "$SCRIPT_PATH" "$@"
