@@ -12,7 +12,7 @@ import yt_dlp
 console = Console()
 CONFIG_FILE = Path.home() / ".mp3_downloader_config"
 
-# --- Helper Functions ---
+# Helper Functions
 
 def clear_screen():
     """Clears the terminal screen."""
@@ -86,7 +86,7 @@ def get_video_info_and_confirm(url):
             info_dict = ydl.extract_info(url, download=False)
             title = info_dict.get('title', 'N/A')
             duration = info_dict.get('duration', 0)
-            filesize = info_dict.get('filesize_approx') # Use approximate size for better reliability
+            filesize = info_dict.get('filesize_approx') 
 
             # Format duration
             if duration:
@@ -98,7 +98,7 @@ def get_video_info_and_confirm(url):
             # Format file size
             size_str = format_bytes(filesize)
 
-            # --- Display UI ---
+            #Display UI
             text_content = f"[bold yellow]Title:[/bold yellow] {title}\n"
             text_content += f"[bold yellow]Duration:[/bold yellow] {duration_str}\n"
             text_content += f"[bold yellow]Size:[/bold yellow] {size_str}\n"
@@ -173,7 +173,7 @@ def download_audio(url, quality, folder):
         console.print(Panel.fit(f"[bold red]An unexpected error occurred:[/bold red]\n{e}", border_style="red"))
         return False
 
-# --- Main Program ---
+#Main Program
 
 def main():
     clear_screen()
