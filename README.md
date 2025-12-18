@@ -36,11 +36,11 @@ sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o
   ```bash
   sudo apt install ffmpeg -y
   ```
-  - **Fedora, CentOS, RHEL:**
+- **Fedora, CentOS, RHEL:**
   ```bash
   sudo dnf install ffmpeg
   ```
-  - **Arch Linux:**
+- **Arch Linux:**
   ```bash
   sudo pacman -S ffmpeg
   ```
