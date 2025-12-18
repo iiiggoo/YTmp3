@@ -32,8 +32,8 @@ This project is built on Python. You can check if you have it installed by runni
 `yt-dlp` is the engine that fetches the video from YouTube.
 
 # Use these commands in your terminal
-```sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp```
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
 
 **C. ffmpeg (The Audio Converter):**
 `ffmpeg` is a powerful tool used to convert the video stream into an MP3 audio file.
