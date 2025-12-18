@@ -51,7 +51,7 @@ sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o
 
 ### Step 2: Clone the Repository
 ```bash
-git clone https://github.com/username/ytmp3.git && cd ytmp3
+git clone https://github.com/iiiggoo/YTmp3.git && cd YTmp3
 ```
 
 ### Step 3: Virtual Environment & Dependencies
