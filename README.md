@@ -1,9 +1,9 @@
-# 🎵 YTmp3 - YouTube MP3 Downloader
+# 🎵 YTmp3 - YouTube MP3 Downloader 
 
 ![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A beautiful and feature-rich command-line YouTube to MP3 downloader built with Python. This tool provides an enhanced terminal UI, allowing you to preview video details before downloading and track progress with a clean, informative progress bar. It also automatically adds cover art and metadata to your downloaded tracks for a seamless music library experience.
+A beautiful and feature-rich command-line YouTube to MP3 downloader built with Python. This tool provides an enhanced terminal UI, allowing you to preview video details before downloading and track progress with a clean, informative progress bar. It also automatically adds cover art and metadata to your downloaded tracks for a seamless music library experience. **Note: The installation instructions below are currently tailored for Linux and macOS systems**.
 
 ---
 
@@ -74,7 +74,7 @@ pip3 install -r requirements.txt
 ### Step 4: System-wide Installation for linux users (Optional)
 If you want to run `ytmp3` from anywhere in your terminal:
 
-## 1:
+#### 1:
 First, navigate to your project directory and run this command : 
 ```bash
 nano ytmp3
@@ -107,7 +107,7 @@ fi
 source "$VENV_PATH"
 python3 "$SCRIPT_PATH" "$@"
 ```
-## 2:
+#### 2:
 
 Move the `ytmp3` file to the bin folder in your system:
 
