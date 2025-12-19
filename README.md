@@ -71,7 +71,7 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-### Step 4: System-wide Installation for linux users (Optional)
+### Step 4: System-wide Installation (Optional)
 If you want to run `ytmp3` from anywhere in your terminal:
 
 #### 1:
